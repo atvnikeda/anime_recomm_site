@@ -17,6 +17,9 @@ A web application that recommends anime for the winter of 2020 based on user pre
 
 *事前に準備されたアニメリストをDBに挿入*  
 `docker-compose run --rm web python manage.py insert_animedata`  
+今回アニメのデータはアニコレ`https://www.anikore.jp/`さんから取得した。  
+アニメの特徴ベクトルを作成する際には、アニコレさんに寄せられた各アニメのレビュー文を利用した。  
+特徴ベクトル化にはWord2Vecを利用した。  
 
 *Webアプリの立ち上げ*  
 `docker-compose up`  
