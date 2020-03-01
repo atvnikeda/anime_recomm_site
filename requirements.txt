@@ -1,0 +1,8 @@
+mecab-python3==0.996.2
+django==1.11
+beautifulsoup4
+numpy
+scikit_learn
+gensim
+pandas
+django-widgets-improved

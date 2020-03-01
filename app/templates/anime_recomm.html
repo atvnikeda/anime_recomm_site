@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<body>
+{% block content %}
+  <h2>アニメ推薦ページ</h2>
+  <p>あなたにオススメの2020冬アニメを紹介</p>
+  {% if user.is_authenticated %}
+    <p>{{ user.username }}のオススメアニメを判定</p>
+    {% if aid_list %}
+      {% for a in aid_list %}
+        <p>{{ a.rank }}位 : <a href="{{ a.anime_url }}">{{ a.title }}</a></p>
+      {% endfor %}
+      <a href="{% url 'home' %}">Homeに戻る</a>
+    {% elif message %}
+      <p>{{ message }}</p>
+      <a href="{% url 'anime_regis' %}">アニメを登録する</a>
+      <a href="{% url 'home' %}">Homeに戻る</a>
+    {% else %}
+      <form action="cgi-bin/abc.cgi" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="username" value={{ user.username }}>
+        <input type="submit" value="判定を開始する">
+      </form>
+      <a href="{% url 'home' %}">Homeに戻る</a>
+    {% endif %}
+  {% else %}
+    <p>ログイン状態でないと判定できません</p>
+    <a href="{% url 'signin' %}">Sign in</a>
+  {% endif %}
+{% endblock %}
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% load static %}
+<html>
+<body>
+{% block content %}
+  <h2>Sign in</h2>
+  <p>サインインページです.</p>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+  </form>
+  <p>アカウントをお持ちでない方</p>
+  <a href="{% url 'signup' %}">アカウント新規登録</a>
+{% endblock %}
+</body>
+</html>
