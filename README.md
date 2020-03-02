@@ -26,3 +26,6 @@ A web application that recommends anime for the winter of 2020 based on user pre
 
 *WebアプリのHomeのページにアクセス*  
 `http://127.0.0.1:8000/app/home/`  
+
+詳しいWebアプリの使い方や、推薦アルゴリズムについてははてなブログの方に書きましたので、ぜひ  
+`http://atvn-yatomi.hatenablog.com/entry/2020/03/02/003335`
