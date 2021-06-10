@@ -1,5 +1,5 @@
 mecab-python3==0.996.2
-django==1.11
+django==2.2.24
 beautifulsoup4
 numpy
 scikit_learn
